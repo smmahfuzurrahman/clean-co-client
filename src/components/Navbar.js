@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Navbar = () => {
+const Navbar = ({ children }) => {
     return (
-        <div class="drawer">
+        <div class="drawer drawer-end">
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
 
@@ -23,20 +23,19 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                Content
+                {children}
+
             </div>
             <div class="drawer-side">
                 <label for="my-drawer-3" class="drawer-overlay"></label>
                 <ul class="menu p-4 overflow-y-auto w-80 bg-base-100">
-
                     <li><a>Sidebar Item 1</a></li>
                     <li><a>Sidebar Item 2</a></li>
-
                 </ul>
-
             </div>
         </div>
     );
 };
 
 export default Navbar;
+

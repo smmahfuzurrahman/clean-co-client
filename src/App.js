@@ -1,10 +1,21 @@
 import Navbar from "./components/Navbar";
-
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import Services from "./pages/Services";
+import Contact from "./pages/Contact";
 function App() {
   return (
-    <div>
-      <Navbar/>
-    </div>
+    <>
+      <Navbar>
+        <Home />
+        <About />
+        <Login />
+        <Services />
+        <Contact />
+      </Navbar >
+
+    </>
   );
 }
 
