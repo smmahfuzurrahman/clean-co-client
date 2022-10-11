@@ -3,7 +3,7 @@ import BucketGirl from "../../assets/images/bucketgirl.png";
 const Landing = () => {
     return (
         <div class="relative">
-            <div class="hero h-screen lg:h-[60vh] bg-accent relative mt-10">
+            <div class="hero h-screen lg:h-[60vh] bg-accent relative mt-16">
                 <div class="hero-content flex-col lg:flex-row">
                     <div>
                         <p data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" class='text-xl'>Best Quality</p>
