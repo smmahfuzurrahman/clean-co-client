@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import useAdmin from '../hooks/useAdmin';
 
 const Navbar = ({ children }) => {
     const [dark, SetDark] = useState(false);
+    const [admin] = useAdmin();
     return (
         <div class="drawer drawer-end" data-theme={dark ? "dark" : "light"}>
             <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
-
                 <div class="w-full navbar bg-base-100 fixed top-0 lg:px-20 z-50">
+                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                     <div class="flex-1 px-2 mx-2 text-2xl">Clean Co.</div>
                     <div class="flex-none lg:hidden">
                         <label for="my-drawer-3" class="btn btn-square btn-ghost">
@@ -19,6 +21,9 @@ const Navbar = ({ children }) => {
                     <div class="flex-none hidden lg:block">
                         <ul class="menu menu-horizontal gap-x-2">
                             <li><NavLink to='/home' className='rounded-lg'>Home</NavLink></li>
+                            { admin && (
+                            <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>
+                            )}
                             <li><NavLink to='/about' className='rounded-lg'>About</NavLink></li>
                             <li><NavLink to='/services' className='rounded-lg'>Services</NavLink></li>
                             <li><NavLink to='/contact' className='rounded-lg'>Contact</NavLink></li>
