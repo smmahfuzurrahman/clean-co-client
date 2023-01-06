@@ -25,7 +25,7 @@ const Navbar = ({ children }) => {
                         <ul class="menu menu-horizontal gap-x-2">
                             <li><NavLink to='/home' className='rounded-lg'>Home</NavLink></li>
                             {admin && (
-                                <li><NavLink to='/dashboard' className='rounded-lg'>Dashboard</NavLink></li>
+                                <li><NavLink to='/dashboard/add-admin' className='rounded-lg'>Dashboard</NavLink></li>
                             )}
                             <li><NavLink to='/about' className='rounded-lg'>About</NavLink></li>
                             <li><NavLink to='/services' className='rounded-lg'>Services</NavLink></li>

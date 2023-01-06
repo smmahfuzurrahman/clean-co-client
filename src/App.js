@@ -1,13 +1,15 @@
+import AOS from 'aos';
+import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import { Route, Routes } from "react-router-dom";
 import { publicRoute } from "./routes/publicRoutes";
 import { privateRoute } from "./routes/privateRoutes";
-import { useEffect } from "react";
 import PrivateRoute from "./Authentication/PrivateRoute";
 import AdminRoute from "./Authentication/AdminRoute";
 import Dashboard from "./pages/Dashboard/Dashboard";
-import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
+import Addadmin from './pages/Dashboard/AddAdmin';
+import AddService from './pages/Dashboard/AddService';
 function App() {
   useEffect(() => {
     AOS.init();
@@ -28,7 +30,10 @@ function App() {
           </Route>
           {/* Admin Route */}
           <Route element={<AdminRoute />}>
-            <Route path="/dashboard" element={<Dashboard/>}/>
+            <Route path="/dashboard" element={<Dashboard />}>
+              <Route path='add-admin' element={<Addadmin />} />
+              <Route path='add-service' element={<AddService />} />
+            </Route>
           </Route>
         </Routes>
       </Navbar >
